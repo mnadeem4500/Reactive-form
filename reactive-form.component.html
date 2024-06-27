@@ -1,0 +1,48 @@
+<p>reactive-form works!</p>
+<form [formGroup]="listingForm" (ngSubmit)="save()">
+    
+    <input type="text" placeholder="Enter sku" formControlName="sku">
+    <br>
+    <br>
+    <input type="text" placeholder="Enter title" formControlName="title">
+    <br>
+    <br>
+    <input type="text" placeholder="Enter shortdes" formControlName="shortDescription">
+    <br>
+    <br>
+    <input type="text" placeholder="Enter longdes" formControlName="longDescription">
+    <br>
+    <br>
+    <input type="text" placeholder="Enter tumbimage" formControlName="thumbImage">
+    <br>
+    <br>
+    <input type="number" placeholder="Enter price" formControlName="price">
+    <br>
+    <br>
+    <input type="checkbox" formControlName="isPriceNegotiable">
+    <br>
+    <br>
+    <input type="number" placeholder="Enter catagore id" formControlName="categoryId">
+    <br>
+    <br>
+    <button> Submit </button>
+</form>
+<h1>Getting Data from API</h1>
+<table>
+    <th> ID </th>
+    <th>TItle </th>
+    <th>Price</th>
+    <tr *ngFor="let a of Data">
+        <td>{{a.listingId}}</td>
+        <td>{{a.title}} </td>
+        <td>{{a.price}}</td>
+
+    </tr>
+</table>
+
+{{listingForm.value | json}}
+
+<br/>
+<br/>
+<br/>
+<br/>
